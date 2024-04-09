@@ -7,10 +7,16 @@ FileData::FileData()
     existence=false;
 }
 
-FileData::FileData(QString newPath,qint64 newWeight,bool newExistence){
+FileData::FileData(QString newPath){
     path=newPath;
-    weight=newWeight;
-    existence=newExistence;
+    QFileInfo file(path);
+    existence=file.exists();
+    if (existence) {
+        weight=file.size();
+    }
+    else {
+        weight=0;
+    }
 }
 
 QString FileData::getPath(){
