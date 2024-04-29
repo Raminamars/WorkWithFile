@@ -1,12 +1,5 @@
 #include "filedata.h"
 
-FileData::FileData() //конструктор без параметров иниц-ет пустой путь,вес нулевой и отсутсвие файла
-{
-    path="";
-    weight=0;
-    existence=false;
-}
-
 //конструктор с параметром newPath иниц-ет путь
 FileData::FileData(QString newPath){
     path=newPath;
@@ -31,16 +24,4 @@ qint64 FileData::getWeight(){
 //возращаем информацию о сущ-ии файла
 bool FileData::getExistence(){
     return existence;
-}
-//устанавливаем новый путь к файлу
-void FileData::setPath(QString newPath){
-    path=newPath;
-}
-//устанавливаем новый вес файла
-void FileData::setWeight(qint64 newWeight){
-    weight=newWeight;
-}
-//устанавливаем новое значение существования файла
-void FileData::setExistence(bool newExistence ){
-    existence=newExistence;
 }
